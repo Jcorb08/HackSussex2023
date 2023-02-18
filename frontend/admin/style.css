@@ -1,0 +1,50 @@
+body {
+    background-image: url("../Sharks-Gambit-Background.png");
+    /*background-color: #333;*/
+    margin: 0;
+}
+
+#sharkHolder {
+    height: 100vh;
+}
+
+.shark {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+button {
+    background-color: #1E90FF;
+    border-radius: 20px;
+    border: none;
+    border-bottom: 5px solid #0B60CC;
+    border-right: 5px solid #0B60CC;
+    font-size: 1.75rem;
+    height: 100px;
+    position: absolute;
+    width: 200px;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(1.25);
+}
+
+button:active {
+    border-bottom: 3px solid #0B60CC;
+    border-right: 3px solid #0B60CC;
+    filter: brightness(1.25);
+    transform: translate(2px, 2px);
+    cursor: pointer;
+}
+
+#getterButton {
+    top: 50px;
+    left: 50px;
+}
+
+#fightButton {
+    top: 50px;
+    right: 50px;
+}
