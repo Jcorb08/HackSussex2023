@@ -1,15 +1,14 @@
 from django.test import TestCase
-import requests
-
+from django.test import Client
 
 # Create your tests here.
 class simple_test(TestCase):
     def test_post_reaponse(self):
-        url_address = "http://localhost:8000/register/register_user/"
-        json_context = {'user_name' : "aghfdhfdhshfsfh"}
-        res = requests.post(url = url_address, data = json_context)
-        print(res.status_code)
-        print(res.text)
-
+        c = Client()
+        url_address = "/register/new_user/"
+        data = {'user_name' : "111"}
+        res = c.post(url_address, data)
+        print("status_code [", res.status_code, "]")
+        print(res.content)
 
    
