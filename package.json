@@ -1,0 +1,25 @@
+{
+  "name": "sharksgambit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jcorb08/HackSussex.git"
+  },
+  "keywords": [
+    "gambit"
+  ],
+  "author": "JSisUncomparable",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jcorb08/HackSussex/issues"
+  },
+  "homepage": "https://github.com/Jcorb08/HackSussex#readme",
+  "dependencies": {
+    "firebase": "^9.17.1"
+  }
+}
