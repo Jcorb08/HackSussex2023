@@ -1,0 +1,63 @@
+*
+{
+        box-sizing: border-box;
+}
+
+body
+{
+        margin: 30px 50px;
+        background-image: url("Sharks-Gambit-Background.png");
+}
+
+.sharkselection1
+{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 100px 200px;
+}
+
+.sharkselection2
+{
+        color: black;
+        text-align: center;
+        padding: 100px 200px;
+}
+
+.sharkselection3
+{
+        float: right;
+        color: black;
+        text-align: center;
+        padding: 100px 200px;
+}
+
+legend
+{
+        text-align: center;
+        text-decoration: solid;
+        font-family: monospace;
+        font-size: xx-large;
+}
+
+.shark
+{
+        
+        margin-bottom: 10px;
+        height: 180px;
+        width: 280px;
+}
+
+.active
+{
+        border: 5px solid orange;
+}
+
+#sharkHolder
+{
+        padding-top: 450px;
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        height: 50px;
+}
