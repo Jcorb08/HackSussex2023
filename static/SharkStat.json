@@ -1,0 +1,37 @@
+[
+  {
+    "SharkNo": 0,
+    "Attack": 5,
+    "Defence": 5,
+    "Speed": 5,
+    "HP": 100
+  },
+  {
+    "SharkNo": 1,
+    "Attack": 5,
+    "Defence": 5,
+    "Speed": 5,
+    "HP": 100
+  },
+  {
+    "SharkNo": 2,
+    "Attack": 5,
+    "Defence": 5,
+    "Speed": 5,
+    "HP": 100
+  },
+  {
+    "SharkNo": 3,
+    "Attack": 5,
+    "Defence": 5,
+    "Speed": 5,
+    "HP": 100
+  },
+  {
+    "SharkNo": 4,
+    "Attack": 5,
+    "Defence": 5,
+    "Speed": 5,
+    "HP": 100
+  }
+]
