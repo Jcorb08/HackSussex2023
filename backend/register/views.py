@@ -13,7 +13,7 @@ def index(request):
 def first_time_register(request):
     if request.method == "POST":
         data = request.POST
-        user_name = data.get('user_name')
+        user_name = request.POST.get('user_name')
         IP_address = request.POST.get
         # item = registered_user(user_name = "testing_user_name222", IP_address= "testing_user_IP")
         # item.save()
