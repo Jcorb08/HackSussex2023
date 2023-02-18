@@ -12,10 +12,9 @@ def index(request):
 @csrf_exempt
 def first_time_register(request):
     if request.method == "POST":
-        data = request.POST
+        print("ahdfh")
         user_name = request.POST.get('user_name')
-        IP_address = request.POST.get
-        # item = registered_user(user_name = "testing_user_name222", IP_address= "testing_user_IP")
-        # item.save()
-        # return "string"
-        return HttpResponse('user_name')
+        IP_address = request.META["REMOTE_ADDR"]
+        item = registered_user(user_name = user_name, IP_address= IP_address)
+        item.save()
+        return HttpResponse(user_name)
