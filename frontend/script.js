@@ -21,7 +21,7 @@ jQuery(function() {
         //const csrftoken = getCookie('csrftoken');
         $.ajax({
             //url: "https://api.sharksgambit.tech/register/new_user/",
-            url: "http://3.11.164.131/register/post_for_attack_shark",
+            url: "http://3.11.164.131/register/post_for_attack_shark/",
             type: "POST",
             //headers: {'X-CSRFToken': csrftoken},
             //mode: 'same-origin', // Do not send CSRF token to another domain.
@@ -32,13 +32,13 @@ jQuery(function() {
                 shark: data[2]['value']
             },
             dataType: "json",
-            success: function (response) {
-                var resp = JSON.parse(response)
-                alert(resp.status);
-            },
-            error: function (xhr, status) {
-                alert("error");
-            }
+            // success: function (response) {
+            //     var resp = JSON.parse(response)
+            //     alert(resp.status);
+            // },
+            // error: function (xhr, status) {
+            //     alert("error");
+            // }
         });
             
     }
