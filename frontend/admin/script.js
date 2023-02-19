@@ -16,7 +16,9 @@ document.querySelector("#getterButton").addEventListener("click", function() {
     .then((response) => response.json())
     .then((data) => {
         myData = JSON.parse(data);
-        myData.forEach(myWeapon => {
+        myData.forEach(function (myWeapon) {
+            console.log(myWeapon)
+            console.log(mysharks)
             if (myWeapon.weapon == 0){
                 mysharks[myWeapon.shark].push(new Stick())
             }
