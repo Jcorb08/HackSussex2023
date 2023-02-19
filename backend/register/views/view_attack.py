@@ -23,7 +23,7 @@ def get_overall_attack(request):
         
         # attack_action.objects.all().delete()
         response = JsonResponse(data, safe=False)
-        # response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Origin'] = '*'
     
         # print(response)
         return response

@@ -8,7 +8,7 @@ def get_method(url_address : str):
     res = requests.get(url = "http://localhost:8000/register/" + url_address)
     print("status_code [", res.status_code, "]")
     print(res.content)
-    print(res.headers)
+    # print(res.headers)
     # print(type(res.text))
 
 
