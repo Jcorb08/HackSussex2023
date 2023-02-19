@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from ..models.buff import standard_buff
 import json
 
@@ -17,3 +17,10 @@ def initial_standard_buff_table(request):
             
         return HttpResponse("success initial standard_buff_table")
 
+def get_all_standard_buffs(request):
+    if request.method == "GET":
+
+        data = {}
+        for ob in standard_buff.objects.all():
+            data[ob.buff_name] = ob.attack
+        return JsonResponse(data)

@@ -21,7 +21,7 @@ def first_time_register(request):
             return HttpResponse(str(item.pk))
 
         else:
-            return HttpResponse("succesful inserted user had been")
+            return HttpResponse("succesful inserted user")
 
 def reset_registered_user(request):
     if request.method == "GET":
