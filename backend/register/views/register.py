@@ -11,18 +11,18 @@ def first_time_register(request):
     if request.method == "POST":
         user_name = request.POST.get('user_name')
         IP_address = request.META["REMOTE_ADDR"]
-
-        if registered_user.objects.filter(user_name = user_name).first() == None:
+        return HttpResponse(user_name)
+        # if registered_user.objects.filter(user_name = user_name).first() == None:
             
-            item = registered_user(user_name = user_name, IP_address= IP_address)
-            item.save()
-            print("user name registered :", user_name)
-            item = registered_user.objects.filter(user_name = user_name).first()
+        #     item = registered_user(user_name = user_name, IP_address= IP_address)
+        #     item.save()
+        #     print("user name registered :", user_name)
+        #     item = registered_user.objects.filter(user_name = user_name).first()
 
-            return HttpResponse(str(item.pk))
+        #     return HttpResponse(str(item.pk))
 
-        else:
-            return HttpResponse("succesful inserted user had been")
+        # else:
+        #     return HttpResponse("succesful inserted user had been")
 
 def reset_registered_user(request):
     if request.method == "GET":
