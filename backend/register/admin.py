@@ -3,7 +3,7 @@ from .models.registered_user import registered_user
 from .models.shark import shark
 from .models.buff import standard_buff, available_buff
 from .models.equipment import standard_equipment, available_equipment
-
+from .models.attack import attack_action
 
 # Register your models here.
 
@@ -13,3 +13,4 @@ admin.site.register(standard_buff)
 admin.site.register(available_buff)
 admin.site.register(standard_equipment)
 admin.site.register(available_equipment)
+admin.site.register(attack_action)

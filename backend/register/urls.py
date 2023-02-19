@@ -1,8 +1,5 @@
 from django.urls import path
-
-from .views import view_buff, view_shark
-from .views import view_equirement
-from .views import register
+from .views import register, view_buff, view_shark, view_equirement, view_attack
 
 urlpatterns = [
     path('', register.index, name='index'),
@@ -13,7 +10,10 @@ urlpatterns = [
     path('get_all_standard_equipments/', view_equirement.get_all_standard_equipments, name = 'get_all_standard_equipments'),
     path('get_all_standard_buffs/', view_buff.get_all_standard_buffs, name = 'get_all_standard_buffs'),
     path('get_for_equipment_name/', view_equirement.get_for_equipment_name, name = 'get_for_equipment_name'),
-    path('post_for_attack_shark/', view_shark.post_for_attack_shark, name = 'post_for_attack_shark'),
+    
+    path('post_for_attack_shark/', view_attack.post_for_attack_shark, name = 'post_for_attack_shark'),
+    path('get_overall_attack/', view_attack.get_overall_attack, name = 'get_overall_attack'),
+
     path('get_initial_shark/', view_shark.get_initial_shark, name = 'get_initial_shark'),
     path('get_shark_hp/', view_shark.get_shark_hp, name = 'get_shark_hp'),
 
