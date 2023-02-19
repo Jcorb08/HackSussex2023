@@ -15,7 +15,8 @@ document.querySelector("#getterButton").addEventListener("click", function() {
     fetch('http://3.11.164.131/register/get_overall_attack/')
     .then((response) => response.json())
     .then((data) => {
-        data.forEach(myWeapon => {
+        myData = JSON.parse(data);
+        myData.forEach(myWeapon => {
             if (myWeapon.weapon == 0){
                 mysharks[myWeapon.shark].push(new Stick())
             }
