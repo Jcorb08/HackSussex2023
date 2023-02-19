@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from ..models.attack import attack_action
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
+import json
 
 
 @csrf_exempt
@@ -18,11 +19,11 @@ def get_overall_attack(request):
         for ob in attack_action.objects.all():
             data.append({'shark' : ob.shark,'buff' : ob.buff,'equipment' : ob.equipment})
     
+        data = json.dumps(data)
         
         # attack_action.objects.all().delete()
-        response = HttpResponse(data)
-        response.headers['Access-Control-Allow-Origin'] = '*'
+        response = JsonResponse(data, safe=False)
+        response['Access-Control-Allow-Origin'] = '*'
     
-        print(response)
-
+        # print(response)
         return response
