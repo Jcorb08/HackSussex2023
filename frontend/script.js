@@ -23,7 +23,7 @@ jQuery(function() {
             //url: "https://api.sharksgambit.tech/register/new_user/",
             url: "http://3.11.164.131/register/post_new_user",
             type: "POST",
-            headers: {'X-CSRFToken': csrftoken},
+            //headers: {'X-CSRFToken': csrftoken},
             mode: 'same-origin', // Do not send CSRF token to another domain.
             crossDomain: true,
             data: {
