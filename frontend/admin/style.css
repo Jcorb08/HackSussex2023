@@ -8,9 +8,30 @@ body {
 }
 
 .shark {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     position: absolute;
     transform: translate(-50%, -50%);
     width: 200px;
+}
+
+.shark > img {
+    width: 100%;
+}
+
+.hpBar {
+    background-color: #000;
+    border: 2px solid black;
+    width: 75%;
+    height: 20px;
+}
+
+.hpBarFill {
+    background-color: #FE365E;
+    height: 100%;
+    width: 100%;
 }
 
 button {
