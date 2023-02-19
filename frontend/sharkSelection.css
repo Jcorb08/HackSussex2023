@@ -21,7 +21,17 @@ h1
         
 }
 
+.input-hidden 
+{
+        position: absolute;
+        left: -9999px;
+}
 
+input[type=radio]:checked + label>img 
+{
+        border: 1px solid #fff;
+        box-shadow: 0 0 3px 3px #090;
+}
 
 .buffer
 {
@@ -50,7 +60,7 @@ h1
         gap: 50px;
         justify-content: center;
         height: 100px;
-        padding-left: 550px;
+        margin-left: 550px;
 }
 .active
 {
