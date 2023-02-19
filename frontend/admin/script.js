@@ -29,7 +29,7 @@ document.querySelector("#getterButton").addEventListener("click", function() {
                 mysharks[myWeapon.shark].push(new Sword())
             }
         })
-    }
+    });
     // myJSON.forEach(weapon => {
     //     if (weapon.weapon == 0){
     //         mysharks[weapon.shark].push(new Stick())
