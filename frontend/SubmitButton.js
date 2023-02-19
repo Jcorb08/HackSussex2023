@@ -1,21 +1,9 @@
 //alert("String")
-let submit = document.querySelectorAll(".submit")
-for (let index = 0; index < submit.length; index++) {
-        submit[index].addEventListener("click",(e) =>
-        {
-                let id = e.target.getAttribute("id")
-                console.log(id)
-                selectsubmit(id) 
-        })
-}
-
-function selectsubmit(i)
-{
-        for (let index = 0; index < submit.length; index++) {
-                submit[index].classList.remove("active")
+function validateForm() {
+        let submit = ["buffer"]["equipment"]["shark"].value;
+        if (submit == "false") {
+                alert("Name must be filled out");
+                return false;
         }
-        submit[i].classList.add("active")
+        else (submit == "true")
 }
-                console.log(id)
-
-console.log(submit)
