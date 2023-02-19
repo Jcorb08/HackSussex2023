@@ -1,5 +1,6 @@
 # make up 
 backend/env/
+.vscode
 # Logs
 logs
 *.log

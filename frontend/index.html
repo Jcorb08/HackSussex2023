@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="mystyle.css">
-    <scipt defer src="script.js"></scipt>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div id="register">
-        <input type="text">
-        <button id="registerButton">Register</button>
-    </div>
+    <form id="register">
+        <label for="user_name">username: </label>
+        <input id="user_name" name="user_name" type="text">
+        <input type="submit" id="registerButton" value="Register">
+    </form>
+    
 </body>
 </html>

@@ -15,6 +15,7 @@ def first_time_register(request):
             item = registered_user(user_name = user_name, IP_address= IP_address)
             item.save()
             print("user name registered :", user_name)
+            item = registered_user.objects.filter(user_name = user_name).first()
 
             return HttpResponse(str(item.pk))
 
