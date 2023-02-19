@@ -14,7 +14,7 @@ function selectequipment(i)
         for (let index = 0; index < equipment.length; index++) {
                 equipment[index].classList.remove("active")
         }
-        equipment[i].classList.add("active")
+        document.querySelector("#" + i).classList.add('active')
 }
                 console.log(id)
 

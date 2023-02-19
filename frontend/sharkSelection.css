@@ -60,7 +60,7 @@ input[type=radio]:checked + label>img
         gap: 50px;
         justify-content: center;
         height: 100px;
-        margin-left: 550px;
+        margin: auto;
 }
 .active
 {
@@ -68,7 +68,13 @@ input[type=radio]:checked + label>img
 }
 
 
-
+#characterSelection{
+        display: flex;
+        flex-direction: column;
+}
+#characterSelection > div {
+        padding: 1em 0;
+}
 
 
 #bufferHolder
@@ -76,26 +82,43 @@ input[type=radio]:checked + label>img
         display: flex;
         gap: 50px;
         justify-content: center;
-        height: 50px;
+        /* height: 50px; */
+        flex-wrap: wrap;
 }
 
 #equipmentHolder
 {
-        padding-top: 100px;
+        /* padding-top: 100px; */
         display: flex;
         gap: 50px;
         justify-content: center;
-        height: 50px;
+        /* height: 50px; */
+        flex-wrap: wrap;
 }
 
 #sharkHolder
 {
-        padding-top: 230px;
+        /* padding-top: 230px; */
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+}
+#characterSelection input[type="submit"]{
+        background-image: url("./images/SubmitButton.png");
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+        background-color: transparent;
+        width: 263px;
+        height: 117px;
 }
 
-
+img {
+        
+}
 
 
 
