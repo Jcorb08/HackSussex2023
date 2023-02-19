@@ -18,9 +18,10 @@ jQuery(function() {
     
     
     function registerUser(data){
-        const csrftoken = getCookie('csrftoken');
+        //const csrftoken = getCookie('csrftoken');
         $.ajax({
-            url: "https://api.sharksgambit.tech/register/new_user/",
+            //url: "https://api.sharksgambit.tech/register/new_user/",
+            url: "http://3.11.164.131/register/post_new_user",
             type: "POST",
             headers: {'X-CSRFToken': csrftoken},
             mode: 'same-origin', // Do not send CSRF token to another domain.
@@ -38,13 +39,6 @@ jQuery(function() {
             }
         });
             
-        $.post("https://api.sharksgambit.tech/register/new_user/",
-        {
-            username: data[0]
-        },
-        function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
-        });
     }
     
     
