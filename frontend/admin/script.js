@@ -21,9 +21,10 @@ document.querySelector("#fightButton").addEventListener("click", function() {
 
 class Shark {
 
-    constructor(colour) {
+    constructor(colour, hpBar) {
         this.name = colour + " Shark";
         this.hp = 100;
+        this.hpBar = hpBar;
         this.attack = 5;
         this.defense = 5;
         this.speed = 10;
@@ -71,15 +72,18 @@ class FishingRod {
 }
 
 class ThrownWeapon {
-    constructor(element, startPos, endPos) {
+    constructor(weapon, element,startPos, endPos, target) {
+        this.weapon = weapon;
         this.element = element;
         this.elapsedTime = 0;
         this.startPos = startPos;
         this.endPos = endPos;
+        this.target = target;
     }
 }
 
-mysharks = [new Shark("Blue"), new Shark("Green"), new Shark("Orange"), new Shark("Purple"), new Shark("Red")];
+let hpBars = document.querySelectorAll(".hpBarFill");
+mysharks = [new Shark("Blue", hpBars[0]), new Shark("Green", hpBars[1]), new Shark("Orange", hpBars[2]), new Shark("Purple", hpBars[3]), new Shark("Red", hpBars[4])];
 
 mysharks.forEach(shark => {
     shark.weapons.push(new Sword());
@@ -98,29 +102,56 @@ async function startFight() {
 
     while(fighting) {
 
+        let oneHasWeapons = false;
         for (let i = 0; i < mysharks.length; i++) {
+            if(mysharks[i].weapons.length > 0) {
+                oneHasWeapons = true;
+                break;
+            }
+        }
+        if (!oneHasWeapons) {
+            break;
+        }
 
-            //if weapon not equipped then equip
+        for (let i = 0; i < mysharks.length; i++) {
+            
+            if (mysharks[i].hp <= 0) {
+                continue;
+            }
+
             if (!mysharks[i].equippedWeapon) {
                 if(mysharks[i].weapons.length <= 0) {
-                    fighting = false
+                    continue;
                 }
                 let randomWeapon = Math.floor(Math.random()*mysharks[i].weapons.length)
                 let myWeapon = mysharks[i].weapons.splice(randomWeapon, 1)[0];
                 mysharks[i].equippedWeapon = myWeapon;
                 mysharks[i].currentSpeed = mysharks[i].speed - mysharks[i].equippedWeapon.speed;
             }
-            //reduce weapon timer
+            
             mysharks[i].currentSpeed--;
-            //if weapon timer is 0 then attack
+            
             if (mysharks[i].currentSpeed <= 0) {
+
+                let sharksAlive = 0;
+                for (let i = 0; i < mysharks.length; i++) {
+                    if(mysharks[i].hp > 0) {
+                        sharksAlive++;
+                    }
+                }
+
+                if (sharksAlive <= 1) {
+                    fighting = false;
+                    break;
+                }
+
                 let randomShark = undefined;
                 do {
                     randomShark = Math.floor(Math.random()*mysharks.length)
-                } while(randomShark == i);
+                } while(randomShark == i || mysharks[randomShark].hp <= 0);
 
-                let mySharkBox = sharks[i].getBoundingClientRect();
-                let randomSharkBox = sharks[randomShark].getBoundingClientRect();
+                let mySharkBox = sharks[i].children[0].getBoundingClientRect();
+                let randomSharkBox = sharks[randomShark].children[0].getBoundingClientRect();
                 let mySharkCenter = [mySharkBox.left + mySharkBox.width / 2, mySharkBox.top + mySharkBox.height / 2];
                 let randomSharkCenter = [randomSharkBox.left + randomSharkBox.width / 2, randomSharkBox.top + randomSharkBox.height / 2];
                 let thrownWeapon = document.createElement("img");
@@ -129,16 +160,12 @@ async function startFight() {
                 thrownWeapon.style.left = mySharkCenter[0] + 'px';
                 thrownWeapon.style.top = mySharkCenter[1] + 'px';
                 sharkHolderDiv.appendChild(thrownWeapon);
-                thrownWeapons.push(new ThrownWeapon(thrownWeapon, mySharkCenter, randomSharkCenter));
+                thrownWeapons.push(new ThrownWeapon(mysharks[i].equippedWeapon, thrownWeapon, mySharkCenter, randomSharkCenter, mysharks[randomShark]));
                 mysharks[i].equippedWeapon = null;
-                await delay(500);
+                await delay(600);
             }
-            //if no weapons remove from action list
-            //if dead remove from game
-            //if no weapons or 4 dead end fight
-        }
 
-        //fighting = false
+        }
 
     }
 
@@ -169,6 +196,12 @@ function animate(timestamp) {
 
         if (weapon.elapsedTime > 0.5) {
             weapon.element.remove();
+            weapon.target.hp -= weapon.weapon.attack;
+            if (weapon.target.hp < 0) {
+                weapon.target.hp = 0;
+            }
+            console.log(weapon)
+            weapon.target.hpBar.style.width = weapon.target.hp + '%';
             thrownWeapons.splice(thrownWeapons.indexOf(weapon), 1);
         }
 
