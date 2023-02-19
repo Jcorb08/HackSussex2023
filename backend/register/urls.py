@@ -1,11 +1,11 @@
 from django.urls import path
-
-from . import views
+from .views import buff
+from .views import register
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('new_user/', views.first_time_register, name = "first_time_register"),
-    path('reset_registered_user/', views.reset_registered_user, name = 'reset_registered_user'),
-    path('initial_standard_equipment_table', views.initial_standard_equipment_table, name = 'initial_standard_equipment_table')
+    path('', register.index, name='index'),
+    path('new_user/', register.first_time_register, name = "first_time_register"),
+    path('reset_registered_user/', register.reset_registered_user, name = 'reset_registered_user'),
+    path('initial_standard_buff_table/', buff.initial_standard_buff_table, name = 'initial_standard_buff_table')
 
 ]
