@@ -1,6 +1,5 @@
 body {
-    background-image: url("../Sharks-Gambit-Background.png");
-    /*background-color: #333;*/
+    background-image: url("../images/Sharks-Gambit-Background.png");
     margin: 0;
 }
 
@@ -47,4 +46,20 @@ button:active {
 #fightButton {
     top: 50px;
     right: 50px;
+}
+
+@keyframes weaponSpin {
+    from {
+            transform: rotate(0deg);
+    }
+    to {
+            transform: rotate(360deg);
+    }
+}
+
+.thrownWeapon {
+    position: absolute;
+    animation: weaponSpin 0.5s linear infinite;
+    height: 50px;
+    width: 50px;
 }
