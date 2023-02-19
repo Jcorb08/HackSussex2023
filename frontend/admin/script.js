@@ -14,7 +14,22 @@ for (let i = 0; i < sharks.length; i++) {
 document.querySelector("#getterButton").addEventListener("click", function() {
     fetch('http://3.11.164.131/register/get_overall_attack/')
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+        data.forEach(myWeapon => {
+            if (myWeapon.weapon == 0){
+                mysharks[myWeapon.shark].push(new Stick())
+            }
+            else if (myWeapon.weapon == 1) {
+                mysharks[myWeapon.shark].push(new FishingRod())
+            }
+            else if (myWeapon.weapon == 2) {
+                mysharks[myWeapon.shark].push(new Axe())
+            }
+            else if (myWeapon.weapon == 3) {
+                mysharks[myWeapon.shark].push(new Sword())
+            }
+        })
+    }
     // myJSON.forEach(weapon => {
     //     if (weapon.weapon == 0){
     //         mysharks[weapon.shark].push(new Stick())
@@ -103,16 +118,16 @@ class ThrownWeapon {
 let hpBars = document.querySelectorAll(".hpBarFill");
 mysharks = [new Shark("Blue", hpBars[0]), new Shark("Green", hpBars[1]), new Shark("Orange", hpBars[2]), new Shark("Purple", hpBars[3]), new Shark("Red", hpBars[4])];
 
-mysharks.forEach(shark => {
-    shark.weapons.push(new Sword());
-    shark.weapons.push(new Sword());
-    shark.weapons.push(new Axe());
-    shark.weapons.push(new Axe());
-    shark.weapons.push(new Stick());
-    shark.weapons.push(new Stick());
-    shark.weapons.push(new FishingRod());
-    shark.weapons.push(new FishingRod());
-});
+// mysharks.forEach(shark => {
+//     shark.weapons.push(new Sword());
+//     shark.weapons.push(new Sword());
+//     shark.weapons.push(new Axe());
+//     shark.weapons.push(new Axe());
+//     shark.weapons.push(new Stick());
+//     shark.weapons.push(new Stick());
+//     shark.weapons.push(new FishingRod());
+//     shark.weapons.push(new FishingRod());
+// });
 
 async function startFight() {
 
