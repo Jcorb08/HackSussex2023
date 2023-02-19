@@ -1,5 +1,4 @@
 import requests
-import json
 
 url_address = "register/new_user/"
 json_context = {'user_name' : "fuck"}
@@ -26,5 +25,8 @@ if __name__ == "__main__":
 
     # for test_case in test_list:
     #     get_method(test_case)
-    post_method('post_for_equipment_card', {'user_id':2})
-    # post_method('new_user/', {'user_name':'user4'})
+    # post_method('post_for_equipment_card/', {'user_id':2})
+    # post_method('post_new_user/', {'user_name':'user5'})
+    # get_method('get_for_equipment_name/')
+    post_method('post_for_attack_shark/', {'equipment_name':'Stick', 'shark_id':1})
+
