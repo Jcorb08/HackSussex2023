@@ -18,9 +18,13 @@ def post_method(url_address : str, data ):
     print("response text: ", res.text)
     # print(type(res.text))
 
+test_list = ['new_user/', 'reset_registered_user/', 'initial_standard_buff_table', 'initial_standard_equipments_table', 'get_all_standard_equipments']
+# 'new_user/'
+
+
 if __name__ == "__main__":
-    # post_method("new_user/", json_context)
-    get_method("initial_standard_buff_table/")
-    # with open('./static/SBT.json') as f:
-    #     data = json.loads(f.read())
-    #     print(type(data))
+
+    # for test_case in test_list:
+    #     get_method(test_case)
+    post_method('post_for_equipment_card', {'user_id':2})
+    # post_method('new_user/', {'user_name':'user4'})

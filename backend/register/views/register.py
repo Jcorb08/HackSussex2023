@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from ..models.registered_user import registered_user
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
     return HttpResponse("Hello, world. You're at the register index.")
 
+@csrf_exempt
 def first_time_register(request):
     if request.method == "POST":
         user_name = request.POST.get('user_name')
@@ -20,12 +22,12 @@ def first_time_register(request):
             return HttpResponse(str(item.pk))
 
         else:
-            return HttpResponse("user had been inserted")
+            return HttpResponse("succesful inserted user had been")
 
 def reset_registered_user(request):
     if request.method == "GET":
         registered_user.objects.all().delete()
-        return HttpResponse("registered_user table had been deleted")
+        return HttpResponse("succesful deleted registered_user table")
 
 # def initial_standard_buff_table(request):
 #     if request.method == "GET":
