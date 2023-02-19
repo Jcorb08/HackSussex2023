@@ -23,9 +23,8 @@ test_list = ['new_user/', 'reset_registered_user/', 'initial_standard_buff_table
 
 
 if __name__ == "__main__":
-    # post_method("new_user/", json_context)
-    for test_case in test_list:
-        get_method(test_case)
-    # with open('./static/SBT.json') as f:
-    #     data = json.loads(f.read())
-    #     print(type(data))
+
+    # for test_case in test_list:
+    #     get_method(test_case)
+    post_method('post_for_equipment_card', {'user_id':2})
+    # post_method('new_user/', {'user_name':'user4'})
