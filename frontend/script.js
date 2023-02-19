@@ -26,9 +26,9 @@ jQuery(function() {
             //headers: {'X-CSRFToken': csrftoken},
             mode: 'same-origin', // Do not send CSRF token to another domain.
             crossDomain: true,
-            data: JSON.stringify({
+            data: {
                 user_name: data
-            }),
+            },
             dataType: "json",
             success: function (response) {
                 var resp = JSON.parse(response)
