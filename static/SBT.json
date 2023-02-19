@@ -1,0 +1,26 @@
+[
+  {
+    "PK Buffer": "Defensive",
+    "Attack": 4,
+    "Defence": 1,
+    "Speed": 2
+  },
+  {
+    "PK Buffer": "Violent",
+    "Attack": 1,
+    "Defence": 5,
+    "Speed": 1
+  },
+  {
+    "PK Buffer": "Neutral",
+    "Attack": 2,
+    "Defence": 2,
+    "Speed": 3
+  },
+  {
+    "PK Buffer": "Wild",
+    "Attack": 1,
+    "Defence": 5,
+    "Speed": 0
+  }
+]

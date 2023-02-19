@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n#)&jh+qgvz*%ti!^&@zg%s#^i-st3*(og+dd8exq6#e*ik6+*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "3.11.164.131"]
+ALLOWED_HOSTS = ["localhost", "3.11.164.131", "api.sharksgambit.tech"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -115,6 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = '/home/ubuntu/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
