@@ -11,5 +11,6 @@ urlpatterns = [
     path('initial_standard_buff_table/', view_buff.initial_standard_buff_table, name = 'initial_standard_buff_table'),
     path('initial_standard_equipments_table/', view_equirement.initial_standard_equipments_table, name = 'initial_standard_equipments_table'),
     path('get_all_standard_equipments/', view_equirement.get_all_standard_equipments, name = 'get_all_standard_equipments'),
+    path('')
 
 ]
