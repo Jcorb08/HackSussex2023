@@ -13,7 +13,8 @@ for (let i = 0; i < sharks.length; i++) {
 
 document.querySelector("#getterButton").addEventListener("click", function() {
     fetch('http://3.11.164.131/register/get_overall_attack/')
-    .then((response) => console.log(response));//response.json())
+    .then((response) => console.log(response))//response.json())
+    .catch((response) => console.log(response))
     // myJSON.forEach(weapon => {
     //     if (weapon.weapon == 0){
     //         mysharks[weapon.shark].push(new Stick())
