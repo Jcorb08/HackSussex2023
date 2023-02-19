@@ -44,7 +44,7 @@ jQuery(function() {
     
     $('#register').on('submit',function(event){
         event.preventDefault();
-        console.log('haha!',$(this).serializeArray())
-        registerUser($(this).serializeArray()[0])
+        console.log('haha!',$(this).serializeArray()[0]['value'])
+        registerUser($(this).serializeArray()[0]['value'])
     });
   });
