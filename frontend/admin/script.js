@@ -92,7 +92,7 @@ mysharks.forEach(shark => {
     shark.weapons.push(new FishingRod());
 });
 
-function startFight() {
+async function startFight() {
 
     let fighting = true;
 
@@ -102,6 +102,9 @@ function startFight() {
 
             //if weapon not equipped then equip
             if (!mysharks[i].equippedWeapon) {
+                if(mysharks[i].weapons.length <= 0) {
+                    fighting = false
+                }
                 let randomWeapon = Math.floor(Math.random()*mysharks[i].weapons.length)
                 let myWeapon = mysharks[i].weapons.splice(randomWeapon, 1)[0];
                 mysharks[i].equippedWeapon = myWeapon;
@@ -127,7 +130,8 @@ function startFight() {
                 thrownWeapon.style.top = mySharkCenter[1] + 'px';
                 sharkHolderDiv.appendChild(thrownWeapon);
                 thrownWeapons.push(new ThrownWeapon(thrownWeapon, mySharkCenter, randomSharkCenter));
-                fighting = false;
+                mysharks[i].equippedWeapon = null;
+                await delay(500);
             }
             //if no weapons remove from action list
             //if dead remove from game
@@ -138,6 +142,10 @@ function startFight() {
 
     }
 
+}
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
 }
 
 let thrownWeapons = [];
@@ -154,12 +162,12 @@ function animate(timestamp) {
 
     thrownWeapons.forEach(weapon => {
         weapon.elapsedTime += deltaTime;
-        let x = weapon.startPos[0] + (weapon.endPos[0] - weapon.startPos[0]) * weapon.elapsedTime;
-        let y = weapon.startPos[1] + (weapon.endPos[1] - weapon.startPos[1]) * weapon.elapsedTime;
+        let x = weapon.startPos[0] + (weapon.endPos[0] - weapon.startPos[0]) * (weapon.elapsedTime * 2);
+        let y = weapon.startPos[1] + (weapon.endPos[1] - weapon.startPos[1]) * (weapon.elapsedTime * 2);
         weapon.element.style.left = x + 'px';
         weapon.element.style.top = y + 'px';
 
-        if (weapon.elapsedTime > 1) {
+        if (weapon.elapsedTime > 0.5) {
             weapon.element.remove();
             thrownWeapons.splice(thrownWeapons.indexOf(weapon), 1);
         }
