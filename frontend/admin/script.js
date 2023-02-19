@@ -20,16 +20,16 @@ document.querySelector("#getterButton").addEventListener("click", function() {
             console.log(myWeapon)
             console.log(mysharks)
             if (myWeapon.equipment == 0){
-                mysharks[myWeapon.shark].weapons.push(new Stick())
+                mysharks[myWeapon.shark].weapons.push(new Stick(myWeapon.buff))
             }
             else if (myWeapon.equipment == 1) {
-                mysharks[myWeapon.shark].weapons.push(new FishingRod())
+                mysharks[myWeapon.shark].weapons.push(new FishingRod(myWeapon.buff))
             }
             else if (myWeapon.equipment == 2) {
-                mysharks[myWeapon.shark].weapons.push(new Axe())
+                mysharks[myWeapon.shark].weapons.push(new Axe(myWeapon.buff))
             }
             else if (myWeapon.equipment == 3) {
-                mysharks[myWeapon.shark].weapons.push(new Sword())
+                mysharks[myWeapon.shark].weapons.push(new Sword(myWeapon.buff))
             }
         })
     });
@@ -72,38 +72,106 @@ class Shark {
 }
 
 class Sword {
-    constructor() {
+    constructor(buff) {
         this.imgPath = "../images/Sword.png";
         this.attack = 5;
         this.defence = 4;
         this.speed = 2;
+        if (buff == 0) {
+            this.attack += 1
+        }
+        else if (buff == 1) {
+            this.attack += 4
+            this.speed += 1
+        }
+
+        else if (buff == 2) {
+            this.attack += 0
+            this.speed += 2
+        }
+
+        else if (buff == 3) {
+            this.attack += 1
+            this.speed += 3
+        }
     }
 }
 
 class Axe {
-    constructor() {
+    constructor(buff) {
         this.imgPath = "../images/Axe.png";
         this.attack = 7;
         this.defence = 3;
         this.speed = 3;
+        if (buff == 0) {
+            this.attack += 1
+        }
+        else if (buff == 1) {
+            this.attack += 4
+            this.speed += 1
+        }
+
+        else if (buff == 2) {
+            this.attack += 0
+            this.speed += 2
+        }
+
+        else if (buff == 3) {
+            this.attack += 1
+            this.speed += 3
+        }
     }
 }
 
 class Stick {
-    constructor() {
+    constructor(buff) {
         this.imgPath = "../images/Stick.png";
         this.attack = 3;
         this.defence = 2;
         this.speed = 7;
+        if (buff == 0) {
+            this.attack += 1
+        }
+        else if (buff == 1) {
+            this.attack += 4
+            this.speed += 1
+        }
+
+        else if (buff == 2) {
+            this.attack += 0
+            this.speed += 2
+        }
+
+        else if (buff == 3) {
+            this.attack += 1
+            this.speed += 3
+        }
     }
 }
 
 class FishingRod {
-    constructor() {
+    constructor(buff) {
         this.imgPath = "../images/Fishing-Rod.png";
         this.attack = 2;
         this.defence = 6;
         this.speed = 3;
+        if (buff == 0) {
+            this.attack += 1
+        }
+        else if (buff == 1) {
+            this.attack += 4
+            this.speed += 1
+        }
+
+        else if (buff == 2) {
+            this.attack += 0
+            this.speed += 2
+        }
+
+        else if (buff == 3) {
+            this.attack += 1
+            this.speed += 3
+        }
     }
 }
 
