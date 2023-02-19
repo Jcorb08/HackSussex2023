@@ -14,7 +14,7 @@ function selectbuffer(i)
         for (let index = 0; index < buffer.length; index++) {
                 buffer[index].classList.remove("active")
         }
-        buffer[i].classList.add("active")
+        document.querySelector("#" + i).classList.add("active")
 }
                 console.log(id)
 

@@ -14,7 +14,7 @@ function selectshark(i)
         for (let index = 0; index < sharks.length; index++) {
                 sharks[index].classList.remove("active")
         }
-        sharks[i].classList.add("active")
+        document.querySelector("#" + i).classList.add("active")
 }
                 console.log(id)
 

@@ -42,9 +42,19 @@ jQuery(function() {
     }
     
     
-    $('#register').on('submit',function(event){
+    // $('#register').on('submit',function(event){
+    //     event.preventDefault();
+    //     console.log('haha!',$(this).serializeArray()[0]['value'])
+    //     registerUser($(this).serializeArray()[0]['value'])
+    // });
+    $('img.buffer,img.equipment,img.shark').on('click',function(event){
+        console.log($(this).prev())
+        $(this).prev().prop("checked","checked");
+    })
+
+    $('#characterSelection').on('submit',function(event){
         event.preventDefault();
-        console.log('haha!',$(this).serializeArray()[0]['value'])
-        registerUser($(this).serializeArray()[0]['value'])
-    });
+        console.log($(this).serializeArray())
+        //registerUser($(this).serializeArray())
+    })
   });

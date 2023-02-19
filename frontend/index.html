@@ -4,17 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sharks Gambit</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="sharkSelection.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script defer src="SharkSelector.js"></script>
+    <script defer src="EquipmentSelector.js"></script>
+    <script defer src="BufferSelector.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
-    <form id="register">
-        <label for="user_name">username: </label>
-        <input id="user_name" name="user_name" type="text">
-        <input type="submit" id="registerButton" value="Register">
-    </form>
+    <body>
+        <h1>
+            Select a Buffer, Item and Character:
+        </h1>
+         <form id='characterSelection'>
+        <div id="bufferHolder">
+            <input class="input-hidden" type="radio" name="buff" value="0" id="buff-0-input" class="buffer">
+            <img id="buff-0" class="buffer" src="images/NeutralText.png" alt="Neautral-Buffer" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="buff" value="1" id="buff-1-input" class="buffer">
+            <img id="buff-1" class="buffer" src="images/ViolentText.png" alt="Violent-Buffer" draggable="false">
     
+            <input class="input-hidden" type="radio" name="buff" value="2" id="buff-2-input" class="buffer">
+            <img id="buff-2" class="buffer" src="images/DefensiveText.png" alt="Defensive-Buffer" draggable="false">
+            
+            <input class="input-hidden" type="radio"name="buff" value="3" id="buff-3-input" class="buffer">
+            <img id="buff-3" class="buffer" src="images/WildText.gif" alt="Wild-Buffer" draggable="false">
+        </div>
+    
+        <div id="equipmentHolder">
+            <input class="input-hidden" type="radio" name="weapon" value="0" id="weapon-0-input"  class="equipment">
+            <img id="weapon-0" class="equipment" src="images/Stick.png" alt="Stick" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="weapon" value="1" id="weapon-1-input" class="equipment">
+            <img id="weapon-1" class="equipment" src="images/Fishing-Rod.png" alt="Fishing-Rod" draggable="false">
+        
+            <input class="input-hidden" type="radio" name="weapon" value="2" id="weapon-2-input" class="equipment">
+            <img id="weapon-2" class="equipment" src="images/Axe.png" alt="Axe" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="weapon" value="3" id="weapon-3-input" class="equipment">
+            <img id="weapon-3" class="equipment" src="images/Sword.png" alt="Sword" draggable="false">
+        </div>
+    
+        <div id="sharkHolder">
+            <input class="input-hidden" type="radio" name="shark" value="0" id="shark-0-input" class="shark">
+            <img id="shark-0" class="shark" src="images/Shark-blue.png" alt="Blue-Shark" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="shark" value="1" id="shark-1-input" class="shark">
+            <img id="shark-1" class="shark" src="images/Shark-red.png" alt="Red-Shark" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="shark" value="2" id="shark-2-input" class="shark">
+            <img id="shark-2" class="shark" src="images/Shark-green.png" alt="Green-Shark" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="shark" value="3" id="shark-3-input" class="shark">
+            <img id="shark-3" class="shark" src="images/Shark-orange.png" alt="Orange-Shark" draggable="false">
+            
+            <input class="input-hidden" type="radio" name="shark" value="4"  class="shark">
+            <img id="shark-4" class="shark" src="images/Shark-purple.png" alt="Purple-Shark" draggable="false">
+        </div>
+        <input class="submit" type="submit" name="submit" src="images/SubmitButton.png" alt="Submit-Button" value="" draggable="false">
+    </form>
 </body>
 </html>
