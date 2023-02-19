@@ -7,6 +7,7 @@ def initial_standard_buff_table(request):
     if request.method == "GET":
         with open('../static/SBT.json') as f:
             data = json.loads(f.read())
+
         # reset and create again
         standard_buff.objects.all().delete()
         for buff in data.keys():
@@ -15,3 +16,4 @@ def initial_standard_buff_table(request):
             insert_buff.save()
             
         return HttpResponse("success initial standard_buff_table")
+
