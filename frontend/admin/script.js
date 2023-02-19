@@ -12,11 +12,7 @@ for (let i = 0; i < sharks.length; i++) {
 }
 
 document.querySelector("#getterButton").addEventListener("click", function() {
-    fetch('http://3.11.164.131/register/get_all_standard_equipments/')
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-
-    fetch('http://3.11.164.131/register/get_all_standard_buffs/')
+    fetch('http://3.11.164.131/register/get_overall_attack/')
     .then((response) => response.json())
     .then((data) => console.log(data));
 });
