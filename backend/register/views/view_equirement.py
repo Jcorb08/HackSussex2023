@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from ..models.equipment import standard_equipment, available_equipment
 import json
 import random
@@ -19,7 +19,11 @@ def initial_standard_equipments_table(request):
 
 def get_all_standard_equipments(request):
     if request.method == "GET":
-        return HttpResponse(standard_equipment.objects.all())
+
+        data = {}
+        for ob in standard_equipment.objects.all():
+            data[ob.equipment_name] = ob.attack
+        return JsonResponse(data)
 
 def get_for_equipment_name(request):
     if request.method == "GET":
