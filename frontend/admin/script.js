@@ -12,7 +12,13 @@ for (let i = 0; i < sharks.length; i++) {
 }
 
 document.querySelector("#getterButton").addEventListener("click", function() {
-    //fetch server data
+    fetch('3.11.164.131/register/get_all_standard_equipments/')
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
+    fetch('3.11.164.131/register/get_all_standard_buffs/')
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 });
 
 document.querySelector("#fightButton").addEventListener("click", function() {
