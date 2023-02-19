@@ -1,26 +1,22 @@
-[
-  {
-    "PK Equiptment": "Sword",
-    "Attack": 5,
-    "Defence": 4,
-    "Speed":2
-  },
-  {
-    "PK Equiptment": "Axe",
-    "Attack": 7,
-    "Defence": 3,
-    "Speed":3
-  },
-  {
-    "PK Equiptment": "Stick",
-    "Attack": 3,
-    "Defence": 2,
-    "Speed":7
-  },
-  {
-    "PK Equiptment": "Fishing Rod",
-    "Attack": 2,
-    "Defence": 6,
-    "Speed":3
-  }
-]
+{
+  "Sword":  {
+              "Attack": 5,
+              "Defence": 4,
+              "Speed":2
+            },
+  "Axe":{
+          "Attack": 7,
+          "Defence": 3,
+          "Speed":3
+        },
+  "Stick":{
+            "Attack": 3,
+            "Defence": 2,
+            "Speed":7
+          },
+  "Fishing Rod":{
+                  "Attack": 2,
+                  "Defence": 6,
+                  "Speed":3
+                }
+}
