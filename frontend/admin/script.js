@@ -20,16 +20,16 @@ document.querySelector("#getterButton").addEventListener("click", function() {
             console.log(myWeapon)
             console.log(mysharks)
             if (myWeapon.equipment == 0){
-                mysharks[myWeapon.shark].push(new Stick())
+                mysharks[myWeapon.shark].weapons.push(new Stick())
             }
             else if (myWeapon.equipment == 1) {
-                mysharks[myWeapon.shark].push(new FishingRod())
+                mysharks[myWeapon.shark].weapons.push(new FishingRod())
             }
             else if (myWeapon.equipment == 2) {
-                mysharks[myWeapon.shark].push(new Axe())
+                mysharks[myWeapon.shark].weapons.push(new Axe())
             }
             else if (myWeapon.equipment == 3) {
-                mysharks[myWeapon.shark].push(new Sword())
+                mysharks[myWeapon.shark].weapons.push(new Sword())
             }
         })
     });
