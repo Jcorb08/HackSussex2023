@@ -10,10 +10,10 @@ def index(request):
 def first_time_register(request):
     if request.method == "POST":
         user_name = request.POST.get('user_name',None)
-        IP_address = request.META["REMOTE_ADDR"]
+        # IP_address = request.META["REMOTE_ADDR"]
         if registered_user.objects.filter(user_name = user_name).first() == None:
             
-            item = registered_user(user_name = user_name, IP_address= IP_address)
+            item = registered_user(user_name = user_name)
             item.save()
             print("user name registered :", user_name)
             item = registered_user.objects.filter(user_name = user_name).first()
