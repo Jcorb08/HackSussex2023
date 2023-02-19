@@ -19,16 +19,16 @@ document.querySelector("#getterButton").addEventListener("click", function() {
         myData.forEach(function (myWeapon) {
             console.log(myWeapon)
             console.log(mysharks)
-            if (myWeapon.weapon == 0){
+            if (myWeapon.equipment == 0){
                 mysharks[myWeapon.shark].push(new Stick())
             }
-            else if (myWeapon.weapon == 1) {
+            else if (myWeapon.equipment == 1) {
                 mysharks[myWeapon.shark].push(new FishingRod())
             }
-            else if (myWeapon.weapon == 2) {
+            else if (myWeapon.equipment == 2) {
                 mysharks[myWeapon.shark].push(new Axe())
             }
-            else if (myWeapon.weapon == 3) {
+            else if (myWeapon.equipment == 3) {
                 mysharks[myWeapon.shark].push(new Sword())
             }
         })
