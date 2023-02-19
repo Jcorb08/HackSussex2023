@@ -12,7 +12,7 @@ def initial_standard_equipments_table(request):
         standard_equipment.objects.all().delete()
         for equi in data.keys():
             item = data[equi]
-            insert_equi = standard_equipment(equi_name = equi, attack = item['Attack'], deffence = item['Defence'], speed = item['Speed'])
+            insert_equi = standard_equipment(equipment_name = equi, attack = item['Attack'], deffence = item['Defence'], speed = item['Speed'])
             insert_equi.save()
             
         return HttpResponse("success initial standard_equipment_table")
