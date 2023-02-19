@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from ..models.attack import attack_action
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 
 @csrf_exempt
@@ -11,7 +11,7 @@ def post_for_attack_shark(request):
 
         return HttpResponse('action had storged')
 
-@csrf_exempt
+@csrf_protect
 def get_overall_attack(request):
     if request.method == "GET":
         data = []
