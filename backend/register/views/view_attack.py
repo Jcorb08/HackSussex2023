@@ -11,7 +11,7 @@ def post_for_attack_shark(request):
 
         return HttpResponse('action had storged')
 
-@csrf_protect
+@csrf_exempt
 def get_overall_attack(request):
     if request.method == "GET":
         data = []
@@ -20,5 +20,7 @@ def get_overall_attack(request):
     
         
         #attack_action.objects.all().delete()
-
-        return HttpResponse(data)
+        response = HttpResponse(data)
+        response['Access-Control-Allow-Origin'] = '*'
+        print(response)
+        # return response

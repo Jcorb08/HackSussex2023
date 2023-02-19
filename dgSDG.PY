@@ -8,6 +8,7 @@ def get_method(url_address : str):
     res = requests.get(url = "http://localhost:8000/register/" + url_address)
     print("status_code [", res.status_code, "]")
     print(res.content)
+    print(res.headers)
     # print(type(res.text))
 
 
@@ -26,8 +27,8 @@ if __name__ == "__main__":
     # for test_case in test_list:
     #     get_method(test_case)
     # post_method('post_for_equipment_card/', {'user_id':2})
-    post_method('post_for_attack_shark/', {'equipment':'Stick','buff':'Wild','shark':'28'})
-    # get_method('get_overall_attack/')
+    # post_method('post_for_attack_shark/', {'equipment':'Stick','buff':'Wild','shark':'28'})
+    get_method('get_overall_attack/')
     # get_method('get_for_equipment_name/')
     # post_method('post_for_attack_shark/', {'equipment_name':'Stick', 'shark_id':1})
     # get_method('get_initial_shark/')
