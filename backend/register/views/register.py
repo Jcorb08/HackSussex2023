@@ -11,7 +11,7 @@ def first_time_register(request):
     if request.method == "POST":
         user_name = request.POST.get('user_name')
         IP_address = request.META["REMOTE_ADDR"]
-        return HttpResponse(user_name)
+        return HttpResponse(request.POST)
         # if registered_user.objects.filter(user_name = user_name).first() == None:
             
         #     item = registered_user(user_name = user_name, IP_address= IP_address)
