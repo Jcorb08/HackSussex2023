@@ -21,13 +21,15 @@ jQuery(function() {
         //const csrftoken = getCookie('csrftoken');
         $.ajax({
             //url: "https://api.sharksgambit.tech/register/new_user/",
-            url: "http://3.11.164.131/register/post_new_user/",
+            url: "http://3.11.164.131/register/post_for_attack_shark",
             type: "POST",
             //headers: {'X-CSRFToken': csrftoken},
-            mode: 'same-origin', // Do not send CSRF token to another domain.
+            //mode: 'same-origin', // Do not send CSRF token to another domain.
             crossDomain: true,
             data: {
-                user_name: data
+                buff: data[0]['value'],
+                equipment: data[1]['value'],
+                shark: data[2]['value']
             },
             dataType: "json",
             success: function (response) {
@@ -55,6 +57,6 @@ jQuery(function() {
     $('#characterSelection').on('submit',function(event){
         event.preventDefault();
         console.log($(this).serializeArray())
-        //registerUser($(this).serializeArray())
+        registerUser($(this).serializeArray())
     })
   });
