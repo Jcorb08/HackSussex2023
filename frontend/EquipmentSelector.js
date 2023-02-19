@@ -1,4 +1,4 @@
-alert("String")
+//alert("String")
 let equipment = document.querySelectorAll(".equipment")
 for (let index = 0; index < equipment.length; index++) {
         equipment[index].addEventListener("click",(e) =>
