@@ -9,7 +9,65 @@ body
         background-image: url("images/Sharks-Gambit-Background.png");
 }
 
-.sharkselection1
+.shark
+{
+        border: 5px solid transparent;
+        margin-bottom: 10px;
+        height: 180px;
+        width: 280px;
+}
+
+.equipment
+{
+        height: 200px;
+        width: 200px;
+}
+
+
+.active
+{
+        border: 5px solid orange;
+}
+
+#sharkHolder
+{
+        padding-top: 400px;
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        height: 50px;
+}
+
+#equipmentHolder
+{
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .sharkselection1
 {
         float: left;
         color: black;
@@ -30,7 +88,7 @@ body
         color: black;
         text-align: center;
         padding: 100px 200px;
-}
+} 
 
 legend
 {
@@ -40,24 +98,4 @@ legend
         font-size: xx-large;
 }
 
-.shark
-{
-        border: 5px solid transparent;
-        margin-bottom: 10px;
-        height: 180px;
-        width: 280px;
-}
-
-.active
-{
-        border: 5px solid orange;
-}
-
-#sharkHolder
-{
-        padding-top: 450px;
-        display: flex;
-        gap: 50px;
-        justify-content: center;
-        height: 50px;
-}
+*/
