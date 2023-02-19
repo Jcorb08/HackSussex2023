@@ -13,5 +13,7 @@ urlpatterns = [
     path('get_all_standard_equipments/', view_equirement.get_all_standard_equipments, name = 'get_all_standard_equipments'),
     path('get_for_equipment_name/', view_equirement.get_for_equipment_name, name = 'get_for_equipment_name'),
     path('post_for_attack_shark/', view_shark.post_for_attack_shark, name = 'post_for_attack_shark'),
+    path('get_initial_shark/', view_shark.get_initial_shark, name = 'get_initial_shark'),
+    path('get_shark_hp/', view_shark.get_shark_hp, name = 'get_shark_hp'),
 
 ]

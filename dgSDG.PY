@@ -7,7 +7,7 @@ json_context = {'user_name' : "fuck"}
 def get_method(url_address : str):
     res = requests.get(url = "http://localhost:8000/register/" + url_address)
     print("status_code [", res.status_code, "]")
-    print(res.text)
+    print(res.content)
     # print(type(res.text))
 
 
@@ -28,5 +28,7 @@ if __name__ == "__main__":
     # post_method('post_for_equipment_card/', {'user_id':2})
     # post_method('post_new_user/', {'user_name':'user5'})
     # get_method('get_for_equipment_name/')
-    post_method('post_for_attack_shark/', {'equipment_name':'Stick', 'shark_id':1})
+    # post_method('post_for_attack_shark/', {'equipment_name':'Stick', 'shark_id':1})
+    # get_method('get_initial_shark/')
+    get_method('get_shark_hp')
 
