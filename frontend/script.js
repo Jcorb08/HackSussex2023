@@ -58,5 +58,7 @@ jQuery(function() {
         event.preventDefault();
         console.log($(this).serializeArray())
         registerUser($(this).serializeArray())
+        document.querySelector("#formDivLol").classList.add("hidden");
+        document.querySelector("#thankyou").classList.remove("hidden");
     })
   });
