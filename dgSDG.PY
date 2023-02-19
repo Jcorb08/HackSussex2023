@@ -1,4 +1,5 @@
 import requests
+import json
 
 url_address = "register/new_user/"
 json_context = {'user_name' : "fuck"}
@@ -19,6 +20,7 @@ def post_method(url_address : str, data ):
 
 if __name__ == "__main__":
     # post_method("new_user/", json_context)
-    # get_method("reset_registered_user/")
-    with open('./static/SET.json') as f:
-        print(f.read())
+    get_method("initial_standard_buff_table/")
+    # with open('./static/SBT.json') as f:
+    #     data = json.loads(f.read())
+    #     print(type(data))

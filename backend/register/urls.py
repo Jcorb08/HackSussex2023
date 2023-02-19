@@ -1,11 +1,15 @@
 from django.urls import path
 
-from . import views
+from .views import view_buff
+from .views import view_equirement
+from .views import register
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('new_user/', views.first_time_register, name = "first_time_register"),
-    path('reset_registered_user/', views.reset_registered_user, name = 'reset_registered_user'),
-    path('initial_standard_equipment_table', views.initial_standard_equipment_table, name = 'initial_standard_equipment_table')
+    path('', register.index, name='index'),
+    path('new_user/', register.first_time_register, name = "first_time_register"),
+    path('reset_registered_user/', register.reset_registered_user, name = 'reset_registered_user'),
+    path('initial_standard_buff_table/', view_buff.initial_standard_buff_table, name = 'initial_standard_buff_table'),
+    path('initial_standard_equipments_table/', view_equirement.initial_standard_equipments_table, name = 'initial_standard_equipments_table'),
+    path('get_all_standard_equipments/', view_equirement.get_all_standard_equipments, name = 'get_all_standard_equipments'),
 
 ]

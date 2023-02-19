@@ -1,6 +1,5 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-from .models.registered_user import registered_user
+from ..models.registered_user import registered_user
 
 # Create your views here.
 def index(request):
@@ -27,6 +26,11 @@ def reset_registered_user(request):
         registered_user.objects.all().delete()
         return HttpResponse("registered_user table had been deleted")
 
-def initial_standard_equipment_table(request):
-    if request.method == "GET":
-        pass
+# def initial_standard_buff_table(request):
+#     if request.method == "GET":
+#         with open('../static/SBT.json') as f:
+#             data = json.loads(f.read())
+        
+#         for item in data.keys():
+#             print(item)
+#         return JsonResponse(data)

@@ -10,7 +10,7 @@ class standard_buff(models.Model):
     speed = models.IntegerField()
 
     def __str__(self):
-        return self.buffer_name
+        return self.buff_name
 
 class available_buff(models.Model):
     standard_buff_ID = models.ForeignKey(standard_buff, on_delete = models.CASCADE)
