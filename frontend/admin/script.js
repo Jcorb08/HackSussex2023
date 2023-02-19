@@ -74,7 +74,7 @@ class Shark {
 class Sword {
     constructor(buff) {
         this.imgPath = "../images/Sword.png";
-        this.attack = 5;
+        this.attack = 5 + 3;
         this.defence = 4;
         this.speed = 2;
         if (buff == 0) {
@@ -100,7 +100,7 @@ class Sword {
 class Axe {
     constructor(buff) {
         this.imgPath = "../images/Axe.png";
-        this.attack = 7;
+        this.attack = 7 + 3;
         this.defence = 3;
         this.speed = 3;
         if (buff == 0) {
@@ -126,7 +126,7 @@ class Axe {
 class Stick {
     constructor(buff) {
         this.imgPath = "../images/Stick.png";
-        this.attack = 3;
+        this.attack = 3 + 3;
         this.defence = 2;
         this.speed = 7;
         if (buff == 0) {
@@ -152,7 +152,7 @@ class Stick {
 class FishingRod {
     constructor(buff) {
         this.imgPath = "../images/Fishing-Rod.png";
-        this.attack = 2;
+        this.attack = 2 + 3;
         this.defence = 6;
         this.speed = 3;
         if (buff == 0) {
