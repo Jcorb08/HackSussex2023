@@ -23,4 +23,4 @@ def get_overall_attack(request):
         response = HttpResponse(data)
         response['Access-Control-Allow-Origin'] = '*'
         print(response)
-        # return response
+        return response
