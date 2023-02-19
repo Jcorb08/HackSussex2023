@@ -13,8 +13,23 @@ for (let i = 0; i < sharks.length; i++) {
 
 document.querySelector("#getterButton").addEventListener("click", function() {
     fetch('http://3.11.164.131/register/get_overall_attack/')
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((response) => console.log(response));//response.json())
+    // myJSON.forEach(weapon => {
+    //     if (weapon.weapon == 0){
+    //         mysharks[weapon.shark].push(new Stick())
+    //     }
+    //     else if (weapon.weapon == 1) {
+    //         mysharks[weapon.shark].push(new FishingRod())
+    //     }
+    //     else if (weapon.weapon == 2) {
+    //         mysharks[weapon.shark].push(new Axe())
+    //     }
+    //     else if (weapon.weapon == 3) {
+    //         mysharks[weapon.shark].push(new Sword())
+    //     }
+        
+    // })
+    //.then((data) => console.log(data));
 });
 
 document.querySelector("#fightButton").addEventListener("click", function() {
