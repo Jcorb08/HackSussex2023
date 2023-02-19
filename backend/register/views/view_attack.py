@@ -19,8 +19,10 @@ def get_overall_attack(request):
             data.append({'shark' : ob.shark,'buff' : ob.buff,'equipment' : ob.equipment})
     
         
-        #attack_action.objects.all().delete()
+        # attack_action.objects.all().delete()
         response = HttpResponse(data)
-        response['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Origin'] = '*'
+    
         print(response)
+
         return response
